@@ -1,13 +1,9 @@
-import Image from "next/image";
-import ProductCard from "./components/ProductCard/ProductCard";
-import Link from "next/link";
 
-export default function Home() {
+
+export default async function Home() {
   return (
-    <main>
-      <div className='pt-8 pl-8'>Hello World</div>
-      <Link href="/users">Users Page</Link>
-      <ProductCard />
+    <main className="relative h-screen">
+      <h1>HELLO WORLD ✌️</h1>
     </main>
   );
 }
