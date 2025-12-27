@@ -1,12 +1,13 @@
 import { withAuth } from "next-auth/middleware"
-import { NextResponse } from "next/server"
 
-export default withAuth(
-    function middleware(req) {
-        return NextResponse.next()
-    }
-)
+export default withAuth({
+    // This helps ensure the middleware knows exactly where to send users
+    pages: {
+        signIn: "/login",
+    },
+})
 
 export const config = {
-    matcher: '/dashboard/:path*',
+    // Ensure this matches your actual dashboard path
+    matcher: ["/dashboard/:path*"],
 }
